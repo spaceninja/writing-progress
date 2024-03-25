@@ -1,0 +1,18 @@
+{
+  "name": "@spaceninja/writing-progress",
+  "version": "1.0.0",
+  "description": "A web component for authors to track progress towards a word count goal.",
+  "author": "Scott Vandehey (https://spaceninja.com)",
+  "homepage": "https://github.com/spaceninja/writing-progress",
+  "repository": "spaceninja/writing-progress",
+  "bugs": "https://github.com/spaceninja/writing-progress/issues",
+  "license": "MIT",
+  "type": "module",
+  "main": "writing-progress.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "start": "npx http-server ."
+  }
+}

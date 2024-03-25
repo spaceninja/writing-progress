@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>writing-progress</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@cloudfour/patterns@16.3.1/dist/standalone.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css"
+    />
+    <style>
+      writing-progress {
+        display: block;
+        margin: 1em 0;
+        padding: 1em;
+        background-color: var(--theme-color-background-secondary);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="o-container o-container--prose o-container--pad">
+      <div class="o-container__content o-rhythm">
+        <h1>&lt;writing-progress></h1>
+
+        <p class="u-text-small">
+          Return to the
+          <a href="https://github.com/spaceninja/writing-progress"
+            >GitHub repo</a
+          >.
+        </p>
+
+        <p>
+          A web component for authors to track progress towards a word count
+          goal.
+        </p>
+
+        <p>
+          Add the <code>&lt;writing-progress></code> element to your page with a
+          <code>word-count</code> attribute, and it will calculate the progress
+          towards your goal.
+        </p>
+
+        <p>Note that the component is unstyled.</p>
+
+        <div>
+          <writing-progress word-count="19873"></writing-progress>
+        </div>
+
+        <pre><code class="language-html">&lt;writing-progress word-count="19873">&lt;/writing-progress></code></pre>
+
+        <h2>Goal</h2>
+
+        <p>
+          You may optionally define a word count goal. The default value is
+          <code>100000</code>.
+        </p>
+
+        <div>
+          <writing-progress word-count="46873" goal="50000"></writing-progress>
+        </div>
+
+        <pre><code class="language-html">&lt;writing-progress word-count="46873" goal="50000">&lt;/writing-progress></code></pre>
+
+        <h2>Rounding</h2>
+
+        <p>
+          For a more pleasing presentation, you may define how the word counts
+          are rounded. Valid options are <code>1</code>, <code>2</code>,
+          <code>5</code>, <code>10</code>, <code>20</code>, <code>25</code>,
+          <code>50</code>, <code>100</code>, <code>200</code>, <code>250</code>,
+          <code>500</code>, <code>1000</code>, <code>2000</code>,
+          <code>2500</code>, and <code>5000</code>.
+        </p>
+
+        <div>
+          <writing-progress word-count="39873" round="1000"></writing-progress>
+        </div>
+
+        <pre><code class="language-html">&lt;writing-progress word-count="39873" round="1000">&lt;/writing-progress></code></pre>
+
+        <h2>Start & End Dates</h2>
+
+        <p>
+          You may optionally provide a start and end date. The default start
+          date is the first day of the current year, and the default end date is
+          the last day of the current year.
+        </p>
+
+        <div>
+          <writing-progress
+            word-count="19873"
+            start-date="2020-01-01"
+            end-date="2029-12-31"
+          ></writing-progress>
+        </div>
+
+        <pre><code class="language-html">&lt;writing-progress word-count="19873" start-date="2020-01-01" end-date="2029-12-31">&lt;/writing-progress></code></pre>
+
+        <p class="u-text-small">
+          Return to the
+          <a href="https://github.com/spaceninja/writing-progress"
+            >GitHub repo</a
+          >.
+        </p>
+      </div>
+    </div>
+
+    <script type="module" src="writing-progress.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  </body>
+</html>
