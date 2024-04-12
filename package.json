@@ -1,6 +1,6 @@
 {
   "name": "@spaceninja/writing-progress",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A web component for authors to track progress towards a word count goal.",
   "author": "Scott Vandehey (https://spaceninja.com)",
   "homepage": "https://github.com/spaceninja/writing-progress",
