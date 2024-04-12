@@ -25,7 +25,9 @@ class WritingProgress extends HTMLElement {
 
     const expected = goal * durationPercentage;
     const difference = wordCount - expected;
-    const percentage = ((wordCount / goal) * 100).toFixed();
+    const percentage = wordCount / goal;
+
+    const fixed = (percentage) => Number(percentage * 100).toFixed();
 
     const round = (number) =>
       Number(number).toLocaleString("en", {
@@ -38,12 +40,18 @@ class WritingProgress extends HTMLElement {
         <strong>${round(wordCount)}</strong>
         words written
       </p>
-      <p class="writing-progress__schedule">
-        <strong>${round(Math.abs(difference))}</strong>
-        words
-        ${difference >= 0 ? "ahead of" : "behind"}
-        schedule
-      </p>
+      <details class="writing-progress__details">
+        <summary class="writing-progress__summary">
+          <strong>${round(Math.abs(difference))}</strong>
+          words
+          ${difference >= 0 ? "ahead of" : "behind"}
+          schedule
+        </summary>
+        <p><small>
+          You are ${fixed(durationPercentage)}% of the way through your writing
+          period, and should have written ${round(expected)} words.
+        </small></p>
+      </details>
       <progress
         class="writing-progress__meter"
         value="${wordCount}"
@@ -54,7 +62,9 @@ class WritingProgress extends HTMLElement {
       <p class="writing-progress__metrics"><small>
         <span class="writing-progress__current">${round(wordCount)}</span> /
         <span class="writing-progress__goal">${goal.toLocaleString("en")}</span>
-        <span class="writing-progress__percentage">(${percentage}%)</span>
+        <span class="writing-progress__percentage">(${fixed(
+          percentage
+        )}%)</span>
       </small></p>
     `;
   }
